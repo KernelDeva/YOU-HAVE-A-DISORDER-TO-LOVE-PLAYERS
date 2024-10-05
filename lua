@@ -1,3 +1,6 @@
+-- Wait until the game environment is available
+repeat wait() until game and game:IsLoaded()
+
 -- Load the UI Library
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20Command%20UI%20Library/Source.lua', true))()
 
@@ -73,13 +76,7 @@ local function broadcastMessage(message)
     end
 end
 
--- Wait for the game to fully load
-local function waitForGameLoad()
-    repeat wait() until game:IsLoaded()
-end
-
 -- Execute on script start
-waitForGameLoad()
 if not notifyFEStatus() then return end
 
 -- Input fields for usernames
